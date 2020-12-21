@@ -1,0 +1,84 @@
+let mapleader=' '
+
+set so=5
+set visualbell
+set showmode
+set clipboard=unnamed
+set surround
+set ideajoin
+set ReplaceWithRegister
+
+" switch input source
+set keep-english-in-normal
+"set keep-english-in-normal-and-restore-in-insert
+
+" insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Move half page faster
+nnoremap <Leader>d  <C-d>
+nnoremap <Leader>u  <C-u>
+
+" redo
+nnoremap U <C-r>
+
+" IDE actions
+" show all the provided actions via `:actionlist`
+
+" replace
+nnoremap / :action Replace<CR>
+
+" AceJump
+nnoremap ; :action AceAction<CR>
+nnoremap <leader>; :action AceDeclarationAction<CR>
+
+" rename 
+nnoremap <leader>re :action RenameElement<CR>
+nnoremap <Leader>rf :action RenameFile<CR>
+
+" git rollback
+nnoremap <Leader>gr :action Vcs.RollbackChangedLines<CR>
+
+" git annotate
+nnoremap <Leader>ga :action Annotate<CR>
+
+" activate terminal window
+nnoremap <Leader>at :action ActivateTerminalToolWindow<CR>
+
+" window operation
+nnoremap <Leader>ww <C-W>w
+nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>wc <C-W>c
+nnoremap <Leader>wr :action ReopenClosedTab<CR>
+noremap <Leader>wm :action MoveEditorToOppositeTabGroup<CR>
+
+" toggle bookmark
+noremap <Leader>tb :action ToggleBookmark<CR>
+
+" scroll from source
+noremap <Leader>ss :action SelectInProjectView<CR>
+
+" code format
+noremap <Leader>fp :action ReformatWithPrettierAction<CR>
+noremap <Leader>fl :action Javascript.Linters.EsLint.Fix<CR>
+
+" file structure
+noremap <Leader>fs :action FileStructurePopup<CR>
+
+" next highlighted error
+noremap <Leader>ne :action GotoNextError<CR>
+
+" call hierarchy
+noremap <Leader>ch :action CallHierarchy<CR>
+
+" collapse region
+noremap <Leader>cr :action CollapseRegion<CR>
+
+" expand region
+noremap <Leader>er :action ExpandRegion<CR>
