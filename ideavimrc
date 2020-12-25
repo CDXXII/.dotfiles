@@ -1,0 +1,51 @@
+" IDE actions
+" show all the provided actions via `:actionlist`
+
+let mapleader=' '
+set so=5
+set visualbell
+set showmode
+set clipboard=unnamed
+set number relativenumber
+
+set surround
+set ideajoin
+set commentary
+set exchange
+set ReplaceWithRegister
+
+set keep-english-in-normal
+"set keep-english-in-normal-and-restore-in-insert
+
+" Use emacs-like key mapping
+inoremap <C-a> <Home>
+inoremap <C-b> <Left>
+inoremap <C-d> <Del>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-h> <BS>
+inoremap <C-w> <C-[>diwa
+
+nnoremap / :action Replace<CR>
+
+nnoremap <leader>rn :action RenameElement<CR>
+
+nnoremap <Leader>ga :action Annotate<CR>
+
+nnoremap <Leader>at :action ActivateTerminalToolWindow<CR>
+
+noremap <Leader>ss :action SelectInProjectView<CR>
+
+noremap <Leader>fp :action ReformatWithPrettierAction<CR>
+noremap <Leader>fl :action Javascript.Linters.EsLint.Fix<CR>
+
+noremap [c :action GotoPreviousError<CR>
+noremap ]c :action GotoNextError<CR>
+
+noremap [g :action VcsShowPrevChangeMarker<CR>
+noremap ]g :action VcsShowNextChangeMarker<CR>
+
+noremap gd :action GotoDeclaration<CR>
+noremap gy :action GotoTypeDeclaration<CR>
+noremap gi :action GotoImplementation<CR>
+
