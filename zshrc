@@ -41,7 +41,7 @@ zinit light zdharma/fast-syntax-highlighting
 zinit ice depth"1" wait lucid compile"{src/*.zsh,src/strategies/*.zsh}" atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice depth"1" wait lucid
+zinit ice depth"1" wait lucid atload"zicdreplay"
 zinit light skywind3000/z.lua
 
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
@@ -55,6 +55,9 @@ zinit light hlissner/zsh-autopair
 
 zinit ice depth"1" wait lucid
 zinit light MichaelAquilina/zsh-you-should-use
+
+zinit ice depth"1" wait lucid
+zinit light "dominik-schwabe/zsh-fnm"
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" ver"stable" bpick"*mac*"
 zinit light neovim/neovim
@@ -80,8 +83,6 @@ zinit light 'jesseduffield/lazygit'
 zinit ice depth"1" wait lucid from"gh-r" as"command" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
-zinit ice depth"1" wait lucid from"gh-r" as"command" mv"fnm* -> fnm" atload'eval "$(fnm env)"'
-zinit light Schniz/fnm
 
 # Zsh autosuggestions
 bindkey '^f' forward-word
