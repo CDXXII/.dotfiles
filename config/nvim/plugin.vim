@@ -13,6 +13,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
 
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'josa42/vim-lightline-coc'
 
 Plug 'mbbill/undotree'
