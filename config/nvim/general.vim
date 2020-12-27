@@ -14,7 +14,7 @@ set expandtab smarttab
 set showcmd
 
 " Show search highlighting and ignore case
-set incsearch ignorecase hlsearch
+set incsearch ignorecase nohlsearch
 
 " Automatic case conversion when searching
 set smartcase

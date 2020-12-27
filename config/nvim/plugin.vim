@@ -6,14 +6,14 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'gruvbox-community/gruvbox'
 
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'mbbill/undotree'
 

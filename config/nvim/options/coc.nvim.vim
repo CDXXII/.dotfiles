@@ -1,4 +1,6 @@
 let g:coc_global_extensions = [
+      \ 'coc-css',
+      \ 'coc-emmet',
       \ 'coc-eslint',
       \ 'coc-explorer',
       \ 'coc-git',
@@ -11,6 +13,7 @@ let g:coc_global_extensions = [
       \ 'coc-smartf',
       \ 'coc-tsserver',
       \ 'coc-translator',
+      \ 'coc-vetur',
       \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-yank',
@@ -66,12 +69,16 @@ nmap <silent> gr <Plug>(coc-references)
 " Multi-Cursor Editor
 nmap <silent> <C-a> :call CocAction('runCommand', 'document.renameCurrentWord')<CR>
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
-nmap <silent> <C-d> <Plug>(coc-cursors-word)
-xmap <silent> <C-d> <Plug>(coc-cursors-range)
+nmap <silent> <C-d> <Plug>(coc-cursors-word)*
+xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
 
-" Diagnostics diagnostics
+" Use `[c` and `]c` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
 
 " Symbol renaming
 " nmap <space>rn <Plug>(coc-rename)
@@ -117,10 +124,28 @@ nmap F <Plug>(coc-smartf-backward)
 nmap ; <Plug>(coc-smartf-repeat)
 nmap , <Plug>(coc-smartf-repeat-opposite)
 
-augroup CocAutocmd
+augroup coc_autocmd
   autocmd!
   " Highlight the symbol and its references when holding the cursor
   autocmd CursorHold * silent call CocActionAsync('highlight')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd ColorScheme * call s:high_light()
 augroup end
+
+function! s:high_light() abort
+  hi HighlightedyankRegion term=bold ctermbg=0 guibg=#13354A
+  hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+  hi CursorLineNr  ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
+  hi CocErrorFloat   guifg=#fb4934 guibg=#504945
+  hi CocWarningFloat guifg=#fabd2f guibg=#504945
+  hi CocInfoFloat    guifg=#d3869b guibg=#504945
+  hi CocHintFloat    guifg=#83a598 guibg=#504945
+  hi CocMenuSel      ctermbg=237 guibg=#504945
+  hi link CocErrorSign    GruvboxRedSign
+  hi link CocWarningSign  GruvboxYellowSign
+  hi link CocInfoSign     GruvboxPurpleSign
+  hi link CocHintSign     GruvboxBlueSign
+  hi link CocFloating     Pmenu
+  hi link MsgSeparator    MoreMsg
+endfunction
