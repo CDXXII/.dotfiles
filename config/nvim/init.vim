@@ -4,6 +4,7 @@ let s:sourceList = [
       \ 'plugin',
       \ 'general',
       \ 'autocmd',
+      \ 'command',
       \ 'mapping',
       \ 'config',
       \ ]
