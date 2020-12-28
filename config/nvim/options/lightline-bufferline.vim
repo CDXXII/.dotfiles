@@ -2,6 +2,12 @@ let g:lightline#bufferline#show_number = 2
 
 let g:lightline#bufferline#clickable = 1
 
+let g:lightline#bufferline#number_map = {
+\ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+\ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+
+let g:lightline#bufferline#number_separator = ''
+
 nmap <space>1 <Plug>lightline#bufferline#go(1)
 nmap <space>2 <Plug>lightline#bufferline#go(2)
 nmap <space>3 <Plug>lightline#bufferline#go(3)

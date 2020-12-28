@@ -1,15 +1,15 @@
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'nord',
   \ 'tabline': {
   \   'left': [ ['buffers'] ],
   \   'right': [ ['close'] ]
   \ },
   \ 'active': {
-  \   'left' :[[ 'mode', 'paste' ], [ 'modified' ]],
-  \   'right':[[ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status', 'readonly' ]]
+  \   'left' :[[ 'mode', 'paste' ]],
+  \   'right':[[ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status' ], [ 'readonly' ]]
   \ },
   \ 'inactive': {
-  \   'left' :[[ 'filetype' ]],
+  \   'left' :[[ 'mode' ]],
   \   'right':[[ 'readonly' ]]
   \ },
   \ 'component_expand': {
@@ -24,12 +24,6 @@ let g:lightline = {
   \ 'component_function': {
   \   'mode': 'LightlineMode',
   \   'readonly': 'LightlineReadonly',
-  \ },
-  \ 'separator': {
-  \   'left': '', 'right': ''
-  \ },
-  \ 'subseparator': {
-  \   'left': '│', 'right': '│'
   \ },
   \ }
 

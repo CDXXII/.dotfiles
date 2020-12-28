@@ -10,7 +10,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
