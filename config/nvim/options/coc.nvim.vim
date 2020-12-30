@@ -110,7 +110,7 @@ function! s:grep_from_selected(type)
   let word = substitute(@@, '\n$', '', 'g')
   let word = escape(word, '| ')
   let @@ = saved_unnamed_register
-  execute 'CocList grep -folder '.word
+  execute 'CocList grep '.word
 endfunction
 
 " Show coc list

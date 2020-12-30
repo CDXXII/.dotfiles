@@ -18,5 +18,7 @@
     "typescriptreact"
   ],
   "eslint.autoFixOnSave": true,
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+
+  "list.source.files.args": ["--hidden", "--files"]
 }

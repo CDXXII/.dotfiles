@@ -2,7 +2,8 @@
 set mouse=a
 
 " Automatic switching of working directory
-set autochdir
+" Do not set this when using coc-list
+" set autochdir
 
 " Set the width of the tabs
 set tabstop=2 softtabstop=2 shiftwidth=2 autoindent
