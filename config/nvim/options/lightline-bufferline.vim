@@ -8,6 +8,8 @@ let g:lightline#bufferline#number_map = {
 
 let g:lightline#bufferline#number_separator = ''
 
+let g:lightline#bufferline#unnamed = 'No Name'
+
 nmap <space>1 <Plug>lightline#bufferline#go(1)
 nmap <space>2 <Plug>lightline#bufferline#go(2)
 nmap <space>3 <Plug>lightline#bufferline#go(3)
