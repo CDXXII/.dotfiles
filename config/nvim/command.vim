@@ -1,4 +1,7 @@
 command! -nargs=0 Reset :call s:StatusReset()
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+command! -nargs=0 Eslint :call CocAction('runCommand', 'eslint.executeAutofix')
+command! -nargs=+ -complete=custom,s:GrepArgs Rg :exe 'CocList grep '.<q-args>
 
 " Remove hidden buffers and cd to current dir
 function! s:StatusReset()
@@ -16,3 +19,17 @@ function! s:StatusReset()
     endif
   endfor
 endf
+
+function! s:GrepArgs(...)
+  let list = [
+        \ '-S', '-smartcase',
+        \ '-i', '-ignorecase',
+        \ '-e', '-regex',
+        \ '-w', '-word',
+        \ '-u', '-skip-vcs-ignores',
+        \ '-t', '-extension',
+        \ '-F', '-folder',
+        \ '-W', '-workspace',
+        \ ]
+  return join(list, "\n")
+endfunction

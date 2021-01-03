@@ -1,6 +1,17 @@
 {
   "coc.preferences.extensionUpdateCheck": "never",
-  "coc.preferences.formatOnSaveFiletypes": ["css", "html", "less"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "yaml"
+  ],
 
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
@@ -11,14 +22,14 @@
   "diagnostic.hintSign": "\uf864",
   "diagnostic.checkCurrentLine": true,
 
+  "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-  "eslint.autoFixOnSave": true,
-  "eslint.packageManager": "yarn",
 
-  "list.source.files.args": ["--hidden", "--files"]
+  "list.source.files.args": ["--hidden", "--files"],
+  "list.source.files.excludePatterns": ["**/.git/**"]
 }

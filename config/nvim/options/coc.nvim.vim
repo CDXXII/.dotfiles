@@ -10,25 +10,25 @@ let g:coc_global_extensions = [
       \ 'coc-lists',
       \ 'coc-pairs',
       \ 'coc-prettier',
-      \ 'coc-smartf',
+      \ 'coc-project',
+      \ 'coc-toml',
       \ 'coc-tsserver',
       \ 'coc-translator',
       \ 'coc-vetur',
-      \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-yank',
-      \]
+      \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>CheckBackSpace() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
+function! s:CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -48,9 +48,9 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>ShowDocumentation()<CR>
 
-function! s:show_documentation()
+function! s:ShowDocumentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   elseif (coc#rpc#ready())
@@ -118,17 +118,30 @@ nnoremap <silent><nowait> <space>ll :<C-u>CocList<CR>
 nnoremap <silent><nowait> <space><space> :<C-u>CocListResume<CR>
 nnoremap <silent><nowait> <space>le :CocCommand explorer<CR>
 
-" Quick Jump
-nmap f <Plug>(coc-smartf-forward)
-nmap F <Plug>(coc-smartf-backward)
-nmap ; <Plug>(coc-smartf-repeat)
-nmap , <Plug>(coc-smartf-repeat-opposite)
-
 augroup coc_autocmd
   autocmd!
   " Highlight the symbol and its references when holding the cursor
   autocmd CursorHold * silent call CocActionAsync('highlight')
+  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#cc241d
+  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+  autocmd ColorScheme * call s:Highlight()
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+function! s:Highlight() abort
+  hi HighlightedyankRegion term=bold ctermbg=0 guibg=#458588
+  hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
+  hi CursorLineNr  ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
+  hi CocErrorFloat   guifg=#fb4934 guibg=#504945
+  hi CocWarningFloat guifg=#fabd2f guibg=#504945
+  hi CocInfoFloat    guifg=#d3869b guibg=#504945
+  hi CocHintFloat    guifg=#83a598 guibg=#504945
+  hi CocMenuSel      ctermbg=237 guibg=#504945
+  hi link CocErrorSign    GruvboxRedSign
+  hi link CocWarningSign  GruvboxYellowSign
+  hi link CocInfoSign     GruvboxPurpleSign
+  hi link CocHintSign     GruvboxBlueSign
+  hi link CocFloating     Pmenu
+  hi link MsgSeparator    MoreMsg
+endfunction
