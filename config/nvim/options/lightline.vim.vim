@@ -5,8 +5,13 @@ let g:lightline = {
   \   'right': [[ 'close' ], [ 'smarttabs' ]]
   \ },
   \ 'active': {
-  \   'left' :[[ 'mode', 'paste'], [ 'modified' ], [ 'filename' ]],
-  \   'right':[[ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'readonly' ], [ 'coc_status' ]]
+  \   'left' :[[ 'mode', 'paste'], [ 'modified' ]],
+  \   'right':[
+  \     [ 'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ],
+  \     [ 'readonly' ],
+  \     [ 'fileformat', 'fileencoding'],
+  \     [ 'coc_status' ]
+  \   ]
   \ },
   \ 'inactive': {
   \   'left' :[[ 'mode' ]],
@@ -20,7 +25,7 @@ let g:lightline = {
   \   'coc_info': 'lightline#coc#info',
   \   'coc_hints': 'lightline#coc#hints',
   \   'coc_ok': 'LightlineCocOk',
-  \   'coc_status': 'lightline#coc#status'
+  \   'coc_status': 'lightline#coc#status',
   \ },
   \ 'component_type': {
   \   'buffers': 'tabsel',
@@ -37,7 +42,8 @@ let g:lightline = {
   \   'mode': 'LightlineMode',
   \   'readonly': 'LightlineReadonly',
   \   'modified': 'LightlineModified',
-  \   'filename': 'LightlineFilename',
+  \   'fileformat': 'LightlineFileFormat',
+  \   'fileencoding': 'LightlineFileEncoding',
   \ },
   \ 'component': {
   \   'close': '%@LightlineCloseBuffer@ X %'
@@ -45,11 +51,13 @@ let g:lightline = {
   \ }
 
 function! LightlineMode() abort
-  let ftmap = {
+  let ft_map = {
     \ 'coc-explorer': 'EXPLORER',
-    \ 'vim-plug': 'PLUGINS'
+    \ 'vim-plug': 'PLUGINS',
+    \ 'vista': 'VISTA'
     \ }
-   return get(ftmap, &filetype, lightline#mode())
+
+  return get(ft_map, &filetype, lightline#mode())
 endfunction
 
 function! LightlineReadonly() abort
@@ -64,35 +72,17 @@ function! LightlineCocOk() abort
   return winwidth(0) < 60 ? '' : lightline#coc#ok()
 endfunction
 
+function! LightlineFileFormat()
+  return winwidth(0) < 60 ? '' : (&fileformat == 'unix' ? '' : &fileformat)
+endfunction
+
+function! LightlineFileEncoding()
+  return winwidth(0) < 60 ? '' : (&fileencoding == 'utf-8' ? '' : &fileencoding)
+endfunction
+
 function! s:trim(maxlen, str) abort
-    let trimed = len(a:str) > a:maxlen ? a:str[0:a:maxlen] . '..' : a:str
-    return trimed
-endfunction
-
-
-function! LightlineFilename() abort
-  let l:maxlen = winwidth(0) - winwidth(0) / 2
-  let l:relative = expand('%:.')
-  let l:tail = expand('%:t')
-  let l:noname = 'No Name'
-
-  if winwidth(0) < 50
-    return ''
-  endif
-
-  if winwidth(0) < 80
-    return l:tail ==# '' ? l:noname : s:trim(l:maxlen, l:tail)
-  endif
-
-  return l:relative ==# '' ? l:noname : s:trim(l:maxlen, l:relative)
-endfunction
-
-function! LightlineCloseBuffer(...)
-  try
-    bdelete
-  catch
-    call lightline#error(v:exception)
-  endtry
+  let trimed = len(a:str) > a:maxlen ? a:str[0:a:maxlen] . '..' : a:str
+  return trimed
 endfunction
 
 function! SmartTabsIndicator() abort
