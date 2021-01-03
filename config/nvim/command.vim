@@ -22,14 +22,14 @@ endf
 
 function! s:GrepArgs(...)
   let list = [
-        \ '-S', '-smartcase',
-        \ '-i', '-ignorecase',
-        \ '-e', '-regex',
-        \ '-w', '-word',
-        \ '-u', '-skip-vcs-ignores',
-        \ '-t', '-extension',
-        \ '-F', '-folder',
-        \ '-W', '-workspace',
-        \ ]
+    \ '-S', '-smartcase',
+    \ '-i', '-ignorecase',
+    \ '-e', '-regex',
+    \ '-w', '-word',
+    \ '-u', '-skip-vcs-ignores',
+    \ '-t', '-extension',
+    \ '-F', '-folder',
+    \ '-W', '-workspace',
+    \ ]
   return join(list, "\n")
 endfunction

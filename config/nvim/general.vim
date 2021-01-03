@@ -18,7 +18,7 @@ set showcmd
 set incsearch ignorecase nohlsearch
 
 " Automatic case conversion when searching
-set smartcase
+" set smartcase
 
 " Show highlighting on regular matches
 set inccommand=nosplit
@@ -93,15 +93,15 @@ if exists('+pumheight')
 endif
 
 " Modification history remains after exit
-function! s:init_backup_dir()
+function! s:InitBackupDir()
   let l:parent = $HOME . "/.config/nvim/.tmp"
   let l:prefix = 'vim'
   let l:dir_list = {
-        \ 'backup': 'backupdir',
-        \ 'views': 'viewdir',
-        \ 'swap': 'directory',
-        \ 'undo': 'undodir'
-        \}
+    \ 'backup': 'backupdir',
+    \ 'views': 'viewdir',
+    \ 'swap': 'directory',
+    \ 'undo': 'undodir'
+    \ }
   let l:common_dir = l:parent . '/.' . l:prefix
 
   for [l:dirname, l:settingname] in items(l:dir_list)
@@ -121,7 +121,7 @@ function! s:init_backup_dir()
   endfor
 endfunction
 
-call s:init_backup_dir()
+call s:InitBackupDir()
 set backup
 set undofile
 
