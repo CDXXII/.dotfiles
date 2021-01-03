@@ -32,8 +32,8 @@ xnoremap <C-c> "+y
 xnoremap p "_dP
 
 " Moving code blocks in visual mode
-xnoremap J :m '>+1<CR>gv=gv
-xnoremap K :m '<-2<CR>gv=gv
+" xnoremap J :m '>+1<CR>gv=gv
+" xnoremap K :m '<-2<CR>gv=gv
 xnoremap < <gv
 xnoremap > >gv
 

@@ -1,3 +1,5 @@
+language en_US
+
 " Enables mouse support
 set mouse=a
 
