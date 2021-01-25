@@ -85,6 +85,14 @@ function! s:trim(maxlen, str) abort
   return trimed
 endfunction
 
+function! LightlineCloseBuffer(...)
+  try
+    bdelete
+  catch
+    call lightline#error(v:exception)
+  endtry
+endfunction
+
 function! SmartTabsIndicator() abort
   let tabs = lightline#tab#tabnum(tabpagenr())
   let tab_total = tabpagenr('$')
