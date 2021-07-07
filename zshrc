@@ -58,7 +58,7 @@ zinit light MichaelAquilina/zsh-you-should-use
 zinit ice depth"1" wait blockf lucid
 zinit light "dominik-schwabe/zsh-fnm"
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" ver"nightly" bpick"*mac*"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" bpick"*mac*"
 zinit light neovim/neovim
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"lf* -> lf" pick"lf" atinit"bindkey -s '^o' 'lfcd\n'"
@@ -70,7 +70,7 @@ zinit light BurntSushi/ripgrep
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"export BAT_THEME='gruvbox'"
 zinit light sharkdp/bat
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"exa*->exa" pick"exa" atload"alias l='exa -lha --color=always --group-directories-first'"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bin/exa*->exa" pick"exa" atload"alias l='exa -lha --color=always --group-directories-first'"
 zinit light ogham/exa
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"delta* -> delta" pick"delta/delta"
@@ -104,5 +104,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Turn off proxies
 alias disproxy='unset http_proxy https_proxy'
 
-# Bastion
+# SSH
 alias bastion='ssh -p 60022 liyingjie@bastion.sidri.com'
+alias zion='ssh 42@10.190.44.202'
+
