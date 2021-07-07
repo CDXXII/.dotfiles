@@ -7,6 +7,7 @@ set visualbell
 set showmode
 set clipboard=unnamed
 set number relativenumber
+set sneak
 
 set surround
 set ideajoin
