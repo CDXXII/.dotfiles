@@ -10,6 +10,10 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+autoload -z edit-command-line
+zle -N edit-command-line
+# bindkey "^X^E" edit-command-line
+
 zinit ice from"gh-r" as"command" atload'eval "$(starship init zsh)"'
 zinit load starship/starship
 
