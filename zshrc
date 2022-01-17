@@ -60,7 +60,10 @@ zinit ice depth"1" wait lucid
 zinit light MichaelAquilina/zsh-you-should-use
 
 zinit ice depth"1" wait blockf lucid
-zinit light "dominik-schwabe/zsh-fnm"
+zinit light dominik-schwabe/zsh-fnm
+
+zinit ice depth"1" wait blockf lucid
+zinit light SebastienWae/pnpm-completions
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" bpick"*mac*"
 zinit light neovim/neovim
@@ -81,7 +84,7 @@ zinit ice depth"1" wait lucid from"gh-r" as"program" mv"delta* -> delta" pick"de
 zinit light dandavison/delta
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"lazygit* -> lazygit" pick"lazygit"
-zinit light 'jesseduffield/lazygit'
+zinit light jesseduffield/lazygit
 
 zinit ice depth"1" wait lucid from"gh-r" as"command" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
@@ -112,3 +115,7 @@ alias disproxy='unset http_proxy https_proxy'
 alias bastion='ssh -p 60022 liyingjie@bastion.sidri.com'
 alias zion='ssh 42@10.190.44.202'
 
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
