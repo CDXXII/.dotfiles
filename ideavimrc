@@ -28,6 +28,8 @@ inoremap <C-f> <Right>
 inoremap <C-h> <BS>
 inoremap <C-w> <C-[>diwa
 
+vnoremap p "_dP
+
 nnoremap / :action Replace<CR>
 
 nnoremap <leader>rn :action RenameElement<CR>
