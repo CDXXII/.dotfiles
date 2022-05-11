@@ -12,3 +12,7 @@ export CLICOLOR=1
 
 # LF
 export LFCD="$HOME/.config/lf/lfcd.sh"
+
+# pnpm
+export PNPM_HOME="/Users/joyside/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
