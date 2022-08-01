@@ -1,7 +1,7 @@
 command! -nargs=0                             Reset    :call s:StatusReset()
 command! -nargs=0                             Prettier :call CocAction('runCommand', 'prettier.formatFile')
 command! -nargs=0                             Eslint   :call CocAction('runCommand', 'eslint.executeAutofix')
-command! -nargs=0                             Format   :call CocAction('format')
+command! -nargs=0                             Format   :call CocActionAsync('format')
 command! -nargs=0                             V        :call s:OpenTerminal()
 command! -nargs=0                             Cd       :call s:Gcd()
 command! -nargs=+ -complete=custom,s:GrepArgs Rg       :exe  'CocList grep '.<q-args>
