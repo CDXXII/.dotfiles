@@ -133,7 +133,3 @@ export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucec
 export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
 export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
 export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
