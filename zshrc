@@ -35,7 +35,7 @@ zinit snippet OMZP::extract
 zinit ice wait lucid
 zinit snippet OMZP::command-not-found
 
-zinit ice depth"1" wait blockf lucid atpull"zinit creinstall -q ."
+zinit ice depth"1" wait blockf lucid atload"zicompinit; zicdreplay"
 zinit light zsh-users/zsh-completions
 
 zinit ice depth"1" wait lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
@@ -62,19 +62,19 @@ zinit light MichaelAquilina/zsh-you-should-use
 zinit ice depth"1" wait blockf lucid
 zinit light dominik-schwabe/zsh-fnm
 
-zinit ice depth"1" wait blockf lucid
+zinit ice depth"1" wait blockf lucid atload"zicompinit; zicdreplay"
 zinit light SebastienWae/pnpm-completions
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" bpick"*mac*"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" bpick"*macos*"
 zinit light neovim/neovim
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"lf* -> lf" pick"lf" atinit"bindkey -s '^o' 'lfcd\n'"
 zinit light gokcehan/lf
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"ripgrep* -> rg" pick"rg/rg" bpick"*apple*"
 zinit light BurntSushi/ripgrep
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"export BAT_THEME='gruvbox'"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"export BAT_THEME='TwoDark'"
 zinit light sharkdp/bat
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bin/exa*->exa" pick"exa" atload"alias l='exa -lha --color=always --group-directories-first'"
