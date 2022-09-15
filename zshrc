@@ -44,7 +44,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth"1" wait lucid compile"{src/*.zsh,src/strategies/*.zsh}" atinit"bindkey '^f' forward-word" atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice depth"1" wait lucid atload"zicdreplay"
+zinit ice depth"1" wait lucid
 zinit light skywind3000/z.lua
 
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
@@ -65,13 +65,13 @@ zinit light dominik-schwabe/zsh-fnm
 zinit ice depth"1" wait blockf lucid atload"zicompinit; zicdreplay"
 zinit light SebastienWae/pnpm-completions
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim" bpick"*macos*"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim"
 zinit light neovim/neovim
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"lf* -> lf" pick"lf" atinit"bindkey -s '^o' 'lfcd\n'"
 zinit light gokcehan/lf
 
-zinit ice depth"1" wait lucid from"gh-r" as"program" mv"ripgrep* -> rg" pick"rg/rg" bpick"*apple*"
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"ripgrep* -> rg" pick"rg/rg"
 zinit light BurntSushi/ripgrep
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"export BAT_THEME='TwoDark'"
@@ -85,6 +85,9 @@ zinit light dandavison/delta
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"lazygit* -> lazygit" pick"lazygit"
 zinit light jesseduffield/lazygit
+
+zinit ice depth"1" wait lucid from"gh-r" as"program" mv"tealdeer* -> tldr" pick"tldr"
+zinit light dbrgn/tealdeer
 
 zinit ice depth"1" wait lucid from"gh-r" as"command" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
