@@ -44,7 +44,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth"1" wait lucid compile"{src/*.zsh,src/strategies/*.zsh}" atinit"bindkey '^f' forward-word" atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice depth"1" wait lucid
+zinit ice depth"1" wait lucid atload"zicompinit; zicdreplay"
 zinit light skywind3000/z.lua
 
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
@@ -61,9 +61,6 @@ zinit light MichaelAquilina/zsh-you-should-use
 
 zinit ice depth"1" wait blockf lucid
 zinit light dominik-schwabe/zsh-fnm
-
-zinit ice depth"1" wait blockf lucid atload"zicompinit; zicdreplay"
-zinit light SebastienWae/pnpm-completions
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim"
 zinit light neovim/neovim
