@@ -59,6 +59,12 @@ zinit light hlissner/zsh-autopair
 zinit ice depth"1" wait lucid
 zinit light MichaelAquilina/zsh-you-should-use
 
+zinit ice depth"1" wait blockf lucid atload"zicompinit; zicdreplay"
+zinit light ryutok/rust-zsh-completions
+
+zinit ice depth"1" wait lucid
+zinit light cowboyd/zsh-rust
+
 zinit ice depth"1" wait blockf lucid
 zinit light dominik-schwabe/zsh-fnm
 
