@@ -7,7 +7,6 @@ set visualbell
 set showmode
 set clipboard=unnamed
 set number relativenumber
-set sneak
 
 set surround
 set ideajoin
@@ -15,6 +14,8 @@ set commentary
 set exchange
 set ReplaceWithRegister
 set sneak
+set NERDTree
+
 
 set keep-english-in-normal
 "set keep-english-in-normal-and-restore-in-insert
