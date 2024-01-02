@@ -44,9 +44,12 @@ noremap <Leader>ss :action SelectInProjectView<CR>
 
 noremap <Leader>fp :action ReformatWithPrettierAction<CR>
 noremap <Leader>fl :action Javascript.Linters.EsLint.Fix<CR>
+noremap <Leader>fs :action FileStructurePopup<CR>
 
-noremap [c :action GotoPreviousError<CR>
-noremap ]c :action GotoNextError<CR>
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
 
 noremap [g :action VcsShowPrevChangeMarker<CR>
 noremap ]g :action VcsShowNextChangeMarker<CR>
