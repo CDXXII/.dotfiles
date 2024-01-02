@@ -65,7 +65,7 @@ zinit light ryutok/rust-zsh-completions
 zinit ice depth"1" wait lucid
 zinit light cowboyd/zsh-rust
 
-zinit ice depth"1" wait blockf lucid
+zinit ice depth"1" wait blockf lucid atinit"ZSH_FNM_ENV_EXTRA_ARGS=--use-on-cd"
 zinit light dominik-schwabe/zsh-fnm
 
 zinit ice depth"1" wait lucid from"gh-r" as"program" mv"nvim* -> nvim" pick"nvim/bin/nvim"
@@ -139,3 +139,11 @@ export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucec
 export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
 export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
 export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
+
+# pnpm
+export PNPM_HOME="/Users/joyside/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
